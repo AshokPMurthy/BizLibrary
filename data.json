@@ -1,0 +1,11 @@
+{
+    "first" : "Ashok",
+    "last" : "Murthy",
+    "status" : true,
+    "age" : 50,
+    "courses" : ["JavaScript", "JSON", "Ajax"],
+    "friends" : {
+        "first" : "Jack",
+        "last" : "Smith"
+    }
+}

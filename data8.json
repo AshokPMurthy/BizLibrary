@@ -1,0 +1,21 @@
+{
+    "person" : {
+        "first" : "Laurence",
+        "last" : "Svekis",
+        "interests" : ["JavaScript", "HTML", "CSS"],
+        "courses" : [
+            {
+                "name" : "JavaScript",
+                "length" : 15
+            },
+            {
+                "name" : "HTML",
+                "length" : 33
+            },
+            {
+                "name" : "CSS",
+                "length" : 43
+            }
+        ]
+    }
+}
