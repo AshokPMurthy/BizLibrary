@@ -9,7 +9,7 @@
       "title": "hello world"
     }
   ],
-  "profile" {
+  "profile": {
     "name": "typicode"
   }
 }
