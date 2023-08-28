@@ -43,32 +43,56 @@ function addElement(el) {
     // add the "Edit" and "Delete" buttons
     const opts = document.createElement('div');
     ele.append(opts);
-    const btn1 = btnMaker(opts, 'Edit', 'green');
-    const btn2 = btnMaker(opts, 'Delete', 'red');
-    // add the button listeners
+    const btn1 = btnMaker(opts, 'Save', 'green');
+    const btn2 = btnMaker(opts, 'Remove', 'red');
+
+    // add the "Save" button listener
     btn1.addEventListener('click', (e) => {
         console.log(el.id);
         console.log(p.textContent); // should show the edited title.
-        updateItem();
+        updateItem(el.id, p.textContent);
     });
-
+    
+    // add the "Remove" button listener
     btn2.addEventListener('click', (e) => {
         console.log(el.id);
-        deleteItem();
+        deleteItem(el.id, ele);
     });
 }
 
 
-// called by "addElement(el)"
-function updateItem() {
+// called by btn1.addEventListener
+function updateItem(id, val) {
+    // UPDATE Posts
+    const url = baseUrl + 'posts/' + id;
+    const body = {
+        'title' : val
+    };
 
-}
+    fetch(url, {
+        method: 'PUT',
+        body: JSON.stringify(body),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8'
+        }
+    })
+    .then(response => response.json())
+    .then(res => console.log(res));
+
+}//end- updateItem
 
 
-// called by "addElement(el)"
-function deleteItem() {
+// called by btn2.addEventListener
+function deleteItem(id, parent) {
+    // DELETE Posts
+    const url = baseUrl + 'posts/' + id;
+    fetch(url, {
+        method: 'DELETE' })
+    .then(res => res.json())
+    .then(res => console.log(res));
 
-}
+    parent.remove(); // remove the deleted element from the DOM
+}//end- deleteItem
 
 
 // Utility function to create buttons
