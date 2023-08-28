@@ -7,7 +7,10 @@ const main = document.querySelector('.container');
 const btn1 = btnMaker(main, 'Load Get Posts', 'blue');
 
 btn.textContent = 'Add New Entry';
-const baseUrl = 'https://jsonplaceholder.typicode.com/';
+// Create a TEST URL that points to "db.json" in the "https://github.com/AshokPMurthy/BizLibrary/"
+const baseGit = 'https://my-json-server.typicode.com/';
+const baseUrl = baseGit + 'AshokPMurthy/BizLibrary/';
+//const baseUrl = 'https://jsonplaceholder.typicode.com/';
 
 // POST data
 btn.addEventListener('click', addData); 
